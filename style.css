@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1a5656;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100%; */
+}
+
+
+.container {
+    background-color: #ffffff;
+    padding: 0.8rem;
+    border-radius: 20px;
+    min-width: 300px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.todo-head {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.todo-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.add-task{
+    display: flex;
+    align-items: center;
+}
+
+input{
+    padding: 1rem;
+    border-radius: 10px 0 0 10px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    flex-grow: 1;
+    box-shadow: inset 1px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background-color: #afc5cb;
+    border-radius: 0 10px 10px 0;
+    /* border: 2px solid #9cb1b7; */
+    cursor: pointer;
+    border: none;
+    padding: 0.1rem 0.1rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #8aaeb6;
+}
+
+#task-list {
+    list-style: none;
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0;
+}
+
+#task-list li {
+    position: relative;
+    background-color: #f0f0f0;
+    padding: 0.7rem 1rem;
+    margin: 0.5rem 0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+}
+
+#task-list li:hover {
+    background-color: #e0e0e0;
+}
+
+
+.task-container {
+    width: 100%;
+}
+
+/* @media (max-width: 400px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .todo-head h1 {
+        font-size: 1.5rem;
+    }
+
+    input[type="text"] {
+        font-size: 0.9rem;
+    }
+
+    button {
+        padding: 0.5rem 0.8rem;
+    }
+} */
+
+
+
+
