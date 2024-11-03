@@ -122,7 +122,7 @@ button:hover {
     flex-direction: row;
 }
 
-@media screen and (max-width: 421px) {
+@media screen and (max-width: 461px) {
     .container {
         padding: 0px;
     }
