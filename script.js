@@ -8,6 +8,13 @@ addButton.addEventListener("click", () => {
     input.value = "";
 });
 
+document.addEventListener("keydown", (event) => {
+    if(event.code === "Enter"){
+        addTaskToList(input.value);
+        input.value = "";
+    }
+})
+
 function syncTasks() {
     const currTaskElements = list.querySelectorAll(".todo-label");
     const newTaskList = [];
@@ -29,6 +36,7 @@ function syncTasks() {
 }
 
 function addTaskToList(inputValue, completed = false) {
+    inputValue = inputValue.trim();
     if (inputValue) {
         const li = document.createElement("li");
         li.classList.add("todo-label");
