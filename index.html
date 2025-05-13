@@ -3,37 +3,120 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Todo List</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/b0df84ba90.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <main>
-        <div class ="container">
-            <div class="todo-head"><h1>ToDo List</h1><img src="./assets/head.jpeg" alt="" style ="height:40px">
-            </div>
-            <div class="todo-body">
-                <div class="add-task">
-                    <input type="text" id = "new-task-input" placeholder="Add your Task here" required>
-                    <button id="add-btn"><img src="./assets/add.svg" alt=""></button>
+        <div class="container">
+            <div class="todo-head">
+                <div class="header-content">
+                    <h1><i class="fas fa-check-circle"></i> ToDo List</h1>
+                    <p class="subtitle">Stay organized and boost your productivity</p>
                 </div>
-                
-                <ul id="task-list">
-                    <!-- <li class = "todo-label">
-                        <p class="task">
-                            Hiii
-                        </p> 
-                        <div class="status">
-                            <img class = "todo-check" src="./assets/unchecked.svg" alt="">
-                            <img class = "todo-remove" src="./assets/trash.svg" alt="">
-                        </div>
-                    </li>
-                -->
-                </ul>
+                <div class="theme-btn">
+                    <button id="theme-toggler" class="theme-toggler">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                </div>
             </div>
-            
-        </div>
 
-        
+            <div class="todo-body">
+                <div class="search-bar">
+                    <div class="search-input-container">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="search-input" placeholder="Search tasks...">
+                        <button class="clear-search" title="Clear search">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <div class="filter-group">
+                        <div class="select-container">
+                            <i class="fas fa-filter"></i>
+                            <select id="filter-select" class="custom-select">
+                                <option value="all">All Tasks</option>
+                                <option value="active">Active Tasks</option>
+                                <option value="completed">Completed Tasks</option>
+                                <option value="high">High Priority</option>
+                                <option value="medium">Medium Priority</option>
+                                <option value="low">Low Priority</option>
+                            </select>
+                        </div>
+                        <div class="select-container">
+                            <i class="fas fa-sort"></i>
+                            <select id="sort-select" class="custom-select">
+                                <option value="date">Sort by Date</option>
+                                <option value="priority">Sort by Priority</option>
+                                <option value="name">Sort by Name</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="add-task">
+                    <div class="input-group">
+                        <div class="main-input-container">
+                            <input type="text" id="new-task-input" placeholder="What needs to be done?" required>
+                            <textarea id="task-description" class="task-description" placeholder="Add a description (optional)" rows="2"></textarea>
+                            <div class="task-options">
+                                <div class="date-picker-container">
+                                    <i class="far fa-calendar"></i>
+                                    <input type="date" id="due-date" class="due-date" title="Set due date">
+                                </div>
+                                <div class="priority-picker-container">
+                                    <i class="fas fa-flag"></i>
+                                    <select id="priority-select" class="priority-select" title="Set priority">
+                                        <option value="low">Low Priority</option>
+                                        <option value="medium">Medium Priority</option>
+                                        <option value="high">High Priority</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <button id="add-btn" class="add-button" title="Add task">
+                            <i class="fas fa-plus"></i>
+                            <span>Add Task</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="task-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-label">Total Tasks</span>
+                            <strong id="total-count">0</strong>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-label">Active</span>
+                            <strong id="active-count">0</strong>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="stat-content">
+                            <span class="stat-label">Completed</span>
+                            <strong id="completed-count">0</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="task-list-container">
+                    <ul id="task-list">
+                    </ul>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="script.js"></script>
 </body>
